@@ -14,7 +14,8 @@ type Props = {
 function Chat({ chatId }: Props) {
     const { data: session } = useSession();
     const [messages] = useCollection(session && query(collection(db, "users", session?.user?.email!, "chats", chatId, "messages"), orderBy("createdAt", "asc")));
-  return (
+    console.log(messages)
+    return (
     <div className="flex-1 overflow-y-auto overflow-x-hidden">
         {messages?.empty && (
             <>
@@ -26,7 +27,7 @@ function Chat({ chatId }: Props) {
         )}
 
         {messages?.docs.map((message) => (
-            <Message key={message.id} message={message.data()} />
+            <Message key={message.id} message={message.data()} chatId={chatId} docId={message.id}/>
         ))}
     </div>
   )
