@@ -13,7 +13,8 @@ type Props = {
 
 function Message({message, docId, chatId}: Props,) {
     const isChatGPT = message.user.name === "ChatGPT";
-    const [editNow, setEditNow] = useState(false);
+    const [editNow, setEditNow] = useState<boolean>(false);
+
     const cancelEdit = () => {
         setEditNow(!editNow);
     }
