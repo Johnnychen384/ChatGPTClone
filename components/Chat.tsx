@@ -15,7 +15,7 @@ function Chat({ chatId }: Props) {
     const { data: session } = useSession();
     const [messages] = useCollection(session && query(collection(db, "users", session?.user?.email!, "chats", chatId, "messages"), orderBy("createdAt", "asc")));
     return (
-    <div className="flex-1 overflow-y-auto overflow-x-hidden mt-4">
+    <div className="flex-1 overflow-y-auto overflow-x-hidden mt-4 w-2/3 mx-auto">
         {messages?.empty && (
             <>
                 <p className="mt-10 text-center text-white">
