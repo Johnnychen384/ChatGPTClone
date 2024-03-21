@@ -27,7 +27,7 @@ function SideBar() {
             onClick={() => signOut()}
             alt="Profile Picture" 
             className="h-12 w-12 rounded-full cursor-pointer mx-auto"/>
-            <p className="cursor-pointer px-5 mt-3" onClick={() => signOut()}>Sign out</p>
+            <p className="cursor-pointer px-5 mt-3" onClick={() => signOut()}>Click Here to Logout</p>
           </div>
         )}
     </div>

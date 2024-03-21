@@ -54,17 +54,17 @@ function ChatInput({chatId}: Props) {
 
 
     return (
-        <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm">
+        <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm w-2/3 mx-auto mb-10">
             <form className="p-5 space-x-5 flex" onSubmit={sendMessage}>
                 <input type="text" 
                 onChange={(e) => setPrompt(e.target.value)}
-                placeholder="Type your message here...."
+                placeholder="Message ChatGPT...."
                 value={prompt}
                 className="focus:outline-none bg-transparent flex-1 disabled:cursor-not-allowed disabled:text-gray-300"
                 disabled={!session}
                 />
 
-                <button type="submit" disabled={!prompt || !session} className="bg-[#11A37F] hover:opacity-50 text-white font-bond px-4 py-2 rounded disabled:cursor-not-allowed">
+                <button type="submit" disabled={!prompt || !session} className="bg-[#343541] hover:opacity-50 text-white font-bond px-4 py-2 rounded disabled:cursor-not-allowed">
                     <PaperAirplaneIcon className="h-4 w-5 -rotate-45"/>
                 </button>
             </form>

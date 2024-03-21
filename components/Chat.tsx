@@ -14,13 +14,12 @@ type Props = {
 function Chat({ chatId }: Props) {
     const { data: session } = useSession();
     const [messages] = useCollection(session && query(collection(db, "users", session?.user?.email!, "chats", chatId, "messages"), orderBy("createdAt", "asc")));
-    console.log(messages)
     return (
-    <div className="flex-1 overflow-y-auto overflow-x-hidden">
+    <div className="flex-1 overflow-y-auto overflow-x-hidden mt-4">
         {messages?.empty && (
             <>
                 <p className="mt-10 text-center text-white">
-                    Type a prompt in below to get started!
+                    Ask ChatGPT A Question By Typing Below!
                 </p>
                 <ArrowDownCircleIcon className="h-10 w-10 mx-auto mt-5 text-white animate-bounce"/>
             </>

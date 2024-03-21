@@ -1,11 +1,10 @@
 'use client'
-import {PlusIcon} from "@heroicons/react/24/solid";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { db } from "../firebase";
 
-function NewChat() {
+function StartNewChat() {
   const router = useRouter()
   const {data: session} = useSession();
 
@@ -19,11 +18,10 @@ function NewChat() {
   };
 
   return (
-    <div className="border-gray-700 border chatRow" onClick={createNewChat}>
-        <PlusIcon className="h-4 w-4"/>
-      <p>Start New Chat</p>
+    <div className="border-gray-700 border chatRow text-white" onClick={createNewChat}>
+      <p>Click Here To Start A Chat!</p>
     </div>
   )
 }
 
-export default NewChat
+export default StartNewChat

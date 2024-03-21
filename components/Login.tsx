@@ -4,14 +4,14 @@ import Image from "next/image";
 
 function Login() {
   return (
-    <div className="bg-[#11A37F] h-screen flex flex-col items-center justify-center text-center">
+    <div className="bg-[#ffffff] h-screen flex flex-col items-center justify-center text-center">
       <Image 
-        src="https://links.papareact.com/2i6"
+        src="/../public/ChatGPT-Logo.jpeg"
         width={300}
         height={300}
         alt="logo"
       />
-      <button onClick={() => signIn('google')} className="text-white font-bold text-3xl animate-pulse">Sign In with Gmail to use ChatGPT</button>
+      <button onClick={() => signIn('google')} className="text-black font-bold text-3xl animate-pulse">Click Here To Sign In</button>
     </div>
   )
 }
